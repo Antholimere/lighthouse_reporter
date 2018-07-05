@@ -12,6 +12,7 @@ module.exports = app => {
 
     await terminal_command();
 
+    res.send(200)
     res.send(stdout)
   })
 }
