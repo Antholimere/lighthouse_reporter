@@ -1,8 +1,5 @@
 const express    = require("express");
 const bodyParser = require("body-parser");
-require("./models/Repo");
-
-mongoose.connect("mongodb://username:password@ds247499.mlab.com:47499/repo_checker")
 
 const app = express();
 
