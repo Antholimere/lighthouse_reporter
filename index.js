@@ -1,6 +1,4 @@
 const express    = require("express");
-const puppeteer  = require('puppeteer');
-const mongoose   = require("mongoose");
 const bodyParser = require("body-parser");
 require("./models/Repo");
 
