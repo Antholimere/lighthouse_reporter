@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const util = require('util');
 
 module.exports = app => {
