@@ -7,6 +7,13 @@ module.exports = app => {
     url = req.query.url;
 
     const exec = util.promisify(require("child_process").exec);
+    fs.writeFile("./myfile.json", "{}", function(err) {
+      if(err) {
+        return console.log(err);
+      }
+
+      console.log("The file was saved!");
+    });
 
     async function terminal_command(command, callback){
       exec(command, {maxBuffer: 1024 * 500}, function(error, stdout, stderr){
