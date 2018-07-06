@@ -6,6 +6,8 @@ module.exports = app => {
     let url, obj;
     url = req.query.url;
 
+    console.log('url received : ' + url)
+
     const exec = util.promisify(require("child_process").exec);
     fs.writeFile("myfile.json", "{}", function(err) {
       if(err) {
