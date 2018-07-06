@@ -35,7 +35,7 @@ module.exports = app => {
       });
     };
 
-    await terminal_command(`lighthouse ${url} --output json --output-path ./myfile.json`, file_callback)
+    await terminal_command(`lighthouse ${url} --quiet --chrome-flags="--headless" --output json --output-path ./myfile.json`, file_callback)
 
     async function file_callback() {
       console.log('running post-terminal command')
