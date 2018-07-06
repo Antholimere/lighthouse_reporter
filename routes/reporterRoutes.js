@@ -28,6 +28,11 @@ module.exports = app => {
           if (err) throw err
           obj = JSON.parse(data)
           let result = {}
+          console.log(obj["categories"]["performance"]["score"])
+          console.log(obj["categories"]["pwa"]["score"])
+          console.log(obj["categories"]["accessibility"]["score"])
+          console.log(obj["categories"]["best-practices"]["score"])
+          console.log(obj["categories"]["seo"]["score"])
           if (obj["categories"]) {
             result.performance = obj["categories"]["performance"]["score"]
             result.pwa = obj["categories"]["pwa"]["score"]
