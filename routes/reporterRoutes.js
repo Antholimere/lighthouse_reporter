@@ -7,7 +7,7 @@ module.exports = app => {
     url = req.query.url;
 
     const exec = util.promisify(require("child_process").exec);
-    fs.writeFile("./myfile.json", "{}", function(err) {
+    fs.writeFile("myfile.json", "{}", function(err) {
       if(err) {
         return console.log(err);
       }
@@ -19,7 +19,7 @@ module.exports = app => {
       exec(command, {maxBuffer: 1024 * 500}, function(error, stdout, stderr){
         console.log('running post-terminal command')
         console.log('found file')
-        fs.readFile('./myfile.json', handleFile)
+        fs.readFile('myfile.json', handleFile)
 
         // Write the callback function
         function handleFile(err, data) {
@@ -34,7 +34,7 @@ module.exports = app => {
           // You can now play with your datas
           res.send(result)
 
-          fs.unlink('./myfile.json',function(err){
+          fs.unlink('myfile.json',function(err){
             if(err) return console.log(err);
             console.log('file deleted successfully');
           });
@@ -42,12 +42,12 @@ module.exports = app => {
       });
     };
 
-    await terminal_command(`lighthouse ${url} --quiet --chrome-flags="--headless" --output json --output-path ./myfile.json`, file_callback)
+    await terminal_command(`lighthouse ${url} --quiet --chrome-flags="--headless" --output json --output-path myfile.json`, file_callback)
 
     async function file_callback() {
       console.log('running post-terminal command')
       console.log('found file')
-      fs.readFile('./myfile.json', handleFile)
+      fs.readFile('myfile.json', handleFile)
 
       // Write the callback function
       function handleFile(err, data) {
