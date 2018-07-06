@@ -26,13 +26,11 @@ module.exports = app => {
           if (err) throw err
           obj = JSON.parse(data)
           let result = {}
-          // result.performance = obj["categories"]["performance"]["score"]
-          // result.pwa = obj["categories"]["pwa"]["score"]
-          // result.accessibility = obj["categories"]["accessibility"]["score"]
-          // result.bestPractices = obj["categories"]["best-practices"]["score"]
-          // result.seo = obj["categories"]["seo"]["score"]
-          console.log(obj["categories"])
-          console.log(obj)
+          result.performance = obj["categories"]["performance"]["score"]
+          result.pwa = obj["categories"]["pwa"]["score"]
+          result.accessibility = obj["categories"]["accessibility"]["score"]
+          result.bestPractices = obj["categories"]["best-practices"]["score"]
+          result.seo = obj["categories"]["seo"]["score"]
           // You can now play with your datas
           res.send(result)
 
