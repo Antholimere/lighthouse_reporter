@@ -31,6 +31,8 @@ module.exports = app => {
           result.accessibility = obj["categories"]["accessibility"]["score"]
           result.bestPractices = obj["categories"]["best-practices"]["score"]
           result.seo = obj["categories"]["seo"]["score"]
+          console.log(obj["categories"])
+          console.log(obj)
           // You can now play with your datas
           res.send(result)
 
